@@ -1,4 +1,10 @@
 package com.example.vyaparpe.repository;
 
-public interface profileRepository {
+
+import com.example.vyaparpe.entity.Profile;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface profileRepository extends JpaRepository<Profile,Long> {
 }
