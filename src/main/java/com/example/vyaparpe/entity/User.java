@@ -2,7 +2,6 @@ package com.example.vyaparpe.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import org.springframework.context.annotation.Profile;
 
 @Entity
 @Data
@@ -24,7 +23,6 @@ public class User {
     @Column(name = "email_address")
     private String emailId;
 
-    @OneToOne
-    @JoinColumn(name="profile_id")
-        private Profile profile;
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    private Profile profile;
 }

@@ -16,6 +16,7 @@ public class Profile {
     @Column(name = "bio")
     private String bio;
 
-    @OneToOne(mappedBy = "profile")
+    @OneToOne
+    @JoinColumn(name = "user_id",nullable = false)
     private User user;
 }
